@@ -4,8 +4,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 # 모델과 토크나이저 로드
-tokenizer = AutoTokenizer.from_pretrained("kreimben/CodeMind-gemma")
-model = AutoModelForCausalLM.from_pretrained("kreimben/CodeMind-gemma")
+tokenizer = AutoTokenizer.from_pretrained("kreimben/CodeMind-gemma-2b")
+model = AutoModelForCausalLM.from_pretrained("kreimben/CodeMind-gemma-2b")
 
 # GPU 사용 가능 여부에 따라 device 설정
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
