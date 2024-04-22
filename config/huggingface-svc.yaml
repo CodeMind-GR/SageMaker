@@ -8,8 +8,8 @@ spec:
     app: hf-api
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8000
+      targetPort: 8000
 
 ---
 apiVersion: apps/v1
@@ -32,4 +32,4 @@ spec:
       - name: hf-api
         image: 211125418324.dkr.ecr.ap-northeast-2.amazonaws.com/huggingface:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
