@@ -16,6 +16,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hf-api-deployment
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: hf-api=211125418324.dkr.ecr.ap-northeast-2.amazonaws.com/huggingface:latest
 spec:
   replicas: 1
   selector:
@@ -28,7 +30,6 @@ spec:
     spec:
       containers:
       - name: hf-api
-        image: 211125418324.dkr.ecr.ap-northeast-2.amazonaws.com/huggingface
+        image: 211125418324.dkr.ecr.ap-northeast-2.amazonaws.com/huggingface:latest
         ports:
         - containerPort: 8080
-
